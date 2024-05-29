@@ -1,0 +1,35 @@
+environment: dev
+project_name: CONTRIPOINT
+report_name: Contripoint automation result
+enter_point: https://betaapi.gemecosystem.com/gemEcosystemDashboard/v1/enter-point
+tags: reward
+feature: src/test/resources/features
+glue_code: com.qa.projectName.stepDefinitions
+jewel_user: kartikay.tomar
+jewel_bridge_token: cf20ce85-686e-4476-8b4e-386d375236561708409269703
+console_report: Y
+jewel_screen_shots: y
+event_firing: N
+email_report: Y
+email_to: kartikay.tomar@geminisolutions.com
+username: kartikay.tomar@geminisolutions.com
+password: WeeWztSYuOoB398iXkX2tQ==
+
+
+dev:
+    browser_name: chrome
+    browser_options:
+      - incognito
+    launch_url: https://contripointui-np.geminisolutions.com/#/main-dashboard
+    browser_timeout: 20
+    email: test.user@geminisolutions.com
+    password: xJ2gmL7UhN
+
+preProd:
+  browser_name: edge
+  browser_options:
+    -inPrivate
+  launch_url: https://contripointui-np.geminisolutions.com/#/main-dashboard
+  browser_timeout: 20
+  email: test.user@geminisolutions.com
+  password": xJ2gmL7UhN

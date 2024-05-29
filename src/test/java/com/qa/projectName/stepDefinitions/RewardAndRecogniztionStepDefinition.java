@@ -2071,6 +2071,7 @@ public class RewardAndRecogniztionStepDefinition {
         if (isDisplayed(RewardAndRecogniztionLocators.LoadingAnimation)) {
             waitUntilElementDisappear(RewardAndRecogniztionLocators.LoadingAnimation, 10);
         }
+        waitSec(1);
         waitUntilElementAppear(RewardAndRecogniztionLocators.AwardListInNomination, 10);
         waitUntilElementClickable(RewardAndRecogniztionLocators.AwardListInNomination, 10);
         if (isDisplayed(RewardAndRecogniztionLocators.AwardListInNomination)) {

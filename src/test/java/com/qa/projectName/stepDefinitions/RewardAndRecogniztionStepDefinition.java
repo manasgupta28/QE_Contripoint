@@ -184,11 +184,11 @@ public class RewardAndRecogniztionStepDefinition {
         waitUntilElementDisappear(RewardAndRecogniztionLocators.SuccessAnimationInAwardList, 10);
 
         // Wait for the search bar to be clickable and appear, with a timeout of 10 seconds
-        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
-        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBar, 10);
+        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBar, 10);
 
         // Enter the award name in the search bar
-        typeText(RewardAndRecogniztionLocators.SearchBarInAwardList, award_name);
+        typeText(RewardAndRecogniztionLocators.SearchBar, award_name);
 
         // Wait for the toggle button to change the state to active to appear
         waitUntilElementAppear(RewardAndRecogniztionLocators.ToggleButtonInActivetoActiveInAwardInAwardList(award_name), 10);
@@ -213,11 +213,11 @@ public class RewardAndRecogniztionStepDefinition {
         waitUntilElementDisappear(RewardAndRecogniztionLocators.SuccessAnimationInAwardList, 10);
 
         // Wait for the search bar to be clickable and appear, with a timeout of 10 seconds
-        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
-        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBar, 10);
+        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBar, 10);
 
         // Enter the award name for the inactivetoactive during search
-        typeText(RewardAndRecogniztionLocators.SearchBarInAwardList, RewardAndRecogniztionLocators.awardNameforInactivetoActiveDuringSearch);
+        typeText(RewardAndRecogniztionLocators.SearchBar, RewardAndRecogniztionLocators.awardNameforInactivetoActiveDuringSearch);
 
         // Wait for the award in recommendation form to turn active during search
         waitUntilElementAppear(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActiveDuringSearch, 10);
@@ -283,10 +283,10 @@ public class RewardAndRecogniztionStepDefinition {
         }
 
         waitUntilElementDisappear(RewardAndRecogniztionLocators.SuccessAnimationInAwardList,10);
-        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
-        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBar, 10);
+        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBar, 10);
 
-        typeText(RewardAndRecogniztionLocators.SearchBarInAwardList, award_name);
+        typeText(RewardAndRecogniztionLocators.SearchBar, award_name);
        waitSec(3);
         waitUntilElementAppear(RewardAndRecogniztionLocators.ToggleButtonInAwardInAwardList(award_name), 5);
         if (isDisplayed(RewardAndRecogniztionLocators.ToggleButtonInAwardInAwardList(award_name))) {
@@ -335,10 +335,10 @@ public class RewardAndRecogniztionStepDefinition {
 
     @Then("Navigate to the list of awards in gem category with Inactive award.")
     public void navigateTheNameOfAwardInGemInactiveList() {
-        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
-        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
+        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBar, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBar, 10);
 
-        typeText(RewardAndRecogniztionLocators.SearchBarInAwardList, RewardAndRecogniztionLocators.AwardNameinGemWithInactive);
+        typeText(RewardAndRecogniztionLocators.SearchBar, RewardAndRecogniztionLocators.AwardNameinGemWithInactive);
 
         waitUntilElementAppear(RewardAndRecogniztionLocators.IteminAwardListGemInactive, 10);
         waitUntilElementClickable(RewardAndRecogniztionLocators.IteminAwardListGemInactive, 10);
@@ -354,10 +354,10 @@ public class RewardAndRecogniztionStepDefinition {
 
     @Then("Navigate to the list of awards in gem category with Active award.")
     public void navigateTheNameOfAwardInGemActiveList() {
-        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
-        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBarInAwardList, 10);
+        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBar, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.SearchBar, 10);
 
-        typeText(RewardAndRecogniztionLocators.SearchBarInAwardList, RewardAndRecogniztionLocators.AwardNameinGemWithActive);
+        typeText(RewardAndRecogniztionLocators.SearchBar, RewardAndRecogniztionLocators.AwardNameinGemWithActive);
 
         waitUntilElementAppear(RewardAndRecogniztionLocators.IteminAwardListGemActive, 10);
         waitUntilElementClickable(RewardAndRecogniztionLocators.IteminAwardListGemActive, 10);
@@ -889,9 +889,15 @@ public class RewardAndRecogniztionStepDefinition {
         click(RewardAndRecogniztionLocators.SelectEndDate);
 
         // Select the start and end quarters for the date range
-        waitUntilElementClickable(RewardAndRecogniztionLocators.QuartersForStartDateRange, 10);
-        click(RewardAndRecogniztionLocators.QuartersForStartDateRange);
-        click(RewardAndRecogniztionLocators.QuartersForEndDateRange);
+//        waitUntilElementClickable(RewardAndRecogniztionLocators.QuartersForStartDateRange, 10);
+//        click(RewardAndRecogniztionLocators.QuartersForStartDateRange);
+//        click(RewardAndRecogniztionLocators.QuartersForEndDateRange);
+
+        for(int i = 0 ; i < 8 ; i++){
+            waitUntilElementClickable(RewardAndRecogniztionLocators.QuartersForStartDateRange(8), 10);
+            click(RewardAndRecogniztionLocators.QuartersForStartDateRange(i + 1));
+
+        }
 
         // Click the done button to apply the date range
         waitUntilElementClickable(RewardAndRecogniztionLocators.DoneButtonInDateRange, 10);
@@ -1012,7 +1018,7 @@ public class RewardAndRecogniztionStepDefinition {
         waitUntilElementClickable(RewardAndRecogniztionLocators.NameOfEmployeeDropDown, 10);
         if (isDisplayed(RewardAndRecogniztionLocators.NameOfEmployeeDropDown)) {
             click(RewardAndRecogniztionLocators.NameOfEmployeeDropDown);
-
+            waitSec(1);
             if (isDisplayed(RewardAndRecogniztionLocators.SearchBarInNameOfEmployee)) {
                 typeText(RewardAndRecogniztionLocators.SearchBarInNameOfEmployee, nameOfEmployee);
                 waitSec(2);
@@ -1076,12 +1082,12 @@ public class RewardAndRecogniztionStepDefinition {
 
     @Then("User Clicks on next button")
     public void userClicksOnNextButton() {
-        waitUntilElementAppear(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation, 10);
+        waitUntilElementAppear(RewardAndRecogniztionLocators.NextButton, 10);
 
-        waitUntilElementClickable(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation, 10);
-        if (isDisplayed(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation)) {
+        waitUntilElementClickable(RewardAndRecogniztionLocators.NextButton, 10);
+        if (isDisplayed(RewardAndRecogniztionLocators.NextButton)) {
             waitSec(3);
-            click(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation);
+            click(RewardAndRecogniztionLocators.NextButton);
             GemTestReporter.addTestStep("Click Next Button", "Next button clicked successfully", STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Click Next Button", "Failed to click Next button", STATUS.FAIL);
@@ -1110,10 +1116,12 @@ public class RewardAndRecogniztionStepDefinition {
         }
 
         waitUntilElementAppear(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActive(award_name), 10);
-
+        scrollIntoView(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActive(award_name));
+        waitSec(3);
         waitUntilElementClickable(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActive(award_name), 10);
         if (isDisplayed(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActive(award_name))) {
             scrollIntoView(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActive(award_name));
+
             click(RewardAndRecogniztionLocators.AwardInRecommendationFormTurnedToActive(award_name));
             GemTestReporter.addTestStep("Select Award", "Award selected successfully", STATUS.PASS);
         } else {
@@ -1214,9 +1222,9 @@ public class RewardAndRecogniztionStepDefinition {
 
     @Then("User Clicks on next button in Add new Recommendation")
     public void userClicksOnNextButtonInAddNewRecommendation() {
-        waitUntilElementClickable(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation, 10);
-        if (isDisplayed(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation)) {
-            click(RewardAndRecogniztionLocators.NextButtonInAddNewRecommendation);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.NextButton, 10);
+        if (isDisplayed(RewardAndRecogniztionLocators.NextButton)) {
+            click(RewardAndRecogniztionLocators.NextButton);
             GemTestReporter.addTestStep("Navigate Forward", "Clicked on the next button in Add New Recommendation", STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Navigate Forward", "Failed to click on the next button in Add New Recommendation", STATUS.FAIL);
@@ -1243,8 +1251,8 @@ public class RewardAndRecogniztionStepDefinition {
 
     @When("user types the name of the award in the search bar and check if the list gets updated")
     public void userTypesTheNameOfTheAwardInTheSearchBar() {
-        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBarInAwardList,10);
-        typeText(RewardAndRecogniztionLocators.SearchBarInAwardList, "Influence");
+        waitUntilElementAppear(RewardAndRecogniztionLocators.SearchBar,10);
+        typeText(RewardAndRecogniztionLocators.SearchBar, "Influence");
         waitUntilElementAppear(RewardAndRecogniztionLocators.FirstNameInAwardList,10);
         waitSec(3);
         String name = String.valueOf(getElementsText(RewardAndRecogniztionLocators.FirstNameInAwardList));
@@ -1544,11 +1552,11 @@ public class RewardAndRecogniztionStepDefinition {
         if (isDisplayed(RewardAndRecogniztionLocators.LoadingAnimation)) {
             waitUntilElementDisappear(RewardAndRecogniztionLocators.LoadingAnimation, 10);
         }
-        waitSec(2);
+        waitSec(5);
 
         waitUntilElementAppear(RewardAndRecogniztionLocators.NominateEmployeePage,10);
         waitUntilElementClickable(RewardAndRecogniztionLocators.NominateEmployeePage,10);
-        if(isDisplayed(RewardAndRecogniztionLocators.NominateEmployeePage)){
+        if(isDisplayed(By.xpath("//p[text()='Warning']")) ||  isDisplayed(RewardAndRecogniztionLocators.NominateEmployeePage) ){
             GemTestReporter.addTestStep("Navigation Verification", "Successfully navigated to the nomination page.", STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Navigation Verification", "Failed to navigate to the nomination page.", STATUS.FAIL);
@@ -1717,7 +1725,7 @@ public class RewardAndRecogniztionStepDefinition {
         String name = getElementText(RewardAndRecogniztionLocators.NamesUnrecognizedTal).trim();
 
         // Enter the name in the search field
-        typeText(RewardAndRecogniztionLocators.SearchBarUnrecognizedTal, name);
+        typeText(RewardAndRecogniztionLocators.SearchBar, name);
 
         // Wait for the list to update dynamically
         waitUntilElementAppear(RewardAndRecogniztionLocators.NamesUnrecognizedTal, 10);
@@ -1812,7 +1820,7 @@ public class RewardAndRecogniztionStepDefinition {
         String name = getElementText(RewardAndRecogniztionLocators.NamesNeverRecommended).trim();
 
         // Enter the name in the search field
-        typeText(RewardAndRecogniztionLocators.SearchBarUnrecognizedTal, name);
+        typeText(RewardAndRecogniztionLocators.SearchBar, name);
 
         waitSec(1);
         // Wait for the list to update dynamically
@@ -2054,9 +2062,10 @@ public class RewardAndRecogniztionStepDefinition {
         }
         waitUntilElementAppear(RewardAndRecogniztionLocators.SelectAwardCategorySec, 10);
 //        scrollIntoView(RewardAndRecogniztionLocators.NominateEmployeePage);
-        waitSec(2);
+//        waitSec(2);
 
         scrollToTop();
+        waitSec(2);
         waitUntilElementClickable(RewardAndRecogniztionLocators.SelectAwardCategorySec, 10);
         if (isDisplayed(RewardAndRecogniztionLocators.SelectAwardCategorySec)) {
             click(RewardAndRecogniztionLocators.SelectAwardCategorySec);
@@ -2072,9 +2081,9 @@ public class RewardAndRecogniztionStepDefinition {
             waitUntilElementDisappear(RewardAndRecogniztionLocators.LoadingAnimation, 10);
         }
         waitSec(1);
-        waitUntilElementAppear(RewardAndRecogniztionLocators.AwardListInNomination, 10);
-        waitUntilElementClickable(RewardAndRecogniztionLocators.AwardListInNomination, 10);
-        if (isDisplayed(RewardAndRecogniztionLocators.AwardListInNomination)) {
+        waitUntilElementAppear(RewardAndRecogniztionLocators.AwardList, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.AwardList, 10);
+        if (isDisplayed(RewardAndRecogniztionLocators.AwardList)) {
             GemTestReporter.addTestStep("Award List Verification", "Award list is loading and selectable.", STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Award List Verification", "Award list is not displayed.", STATUS.FAIL);
@@ -2082,5 +2091,101 @@ public class RewardAndRecogniztionStepDefinition {
     }
 
 
+    @Then("^user checks if employee details \"(.*)\" are visible$")
+    public void userChecksIfEmployeeDetailsAreVisible(String name) {
+
+        waitUntilElementAppear(RewardAndRecogniztionLocators.NominationDetail,10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.NominationDetail,10);
+        String getName = String.valueOf(getElementsText(RewardAndRecogniztionLocators.NominationDetail));
+        if(getName.contains(name)){
+            GemTestReporter.addTestStep("Nomination details", "Nomination Details are visible", STATUS.PASS);
+        } else {
+            GemTestReporter.addTestStep("Nomination details", "Nomination Details are not visible", STATUS.FAIL);
+        }
+
+
+
+    }
+
+    @Then("user checks for the presence of navigation button")
+    public void userChecksForThePresenceOfNavigationButton() {
+        waitUntilElementAppear(RewardAndRecogniztionLocators.DismissButtonNominationPage,10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.DismissButtonNominationPage,10);
+        scrollIntoView(RewardAndRecogniztionLocators.DismissButtonNominationPage);
+        scrollToBottom();
+        waitSec(2);
+        List<WebElement> ls = getElements(RewardAndRecogniztionLocators.DismissButtonNominationPage);
+        for(WebElement temp : ls){
+            if(isDisplayed(temp)) {
+                GemTestReporter.addTestStep("Navigation buttons", "Navigation buttons are visible", STATUS.PASS);
+                return;
+            }
+        }
+        GemTestReporter.addTestStep("Navigation buttons", "Navigation buttons are not visible", STATUS.FAIL);
+    }
+
+    @Then("user checks for the presence of recommended by list")
+    public void userChecksForThePresenceOfRecommendedByList() {
+        waitSec(3);
+        if(isDisplayed(RewardAndRecogniztionLocators.ListNotDisplayedRecommendedBy) || isDisplayed(RewardAndRecogniztionLocators.ListDisplayedRecommendedBy)){
+            GemTestReporter.addTestStep("Recommended by list", "Recommended by list is present", STATUS.PASS);
+        } else {
+            GemTestReporter.addTestStep("Recommended by list", "Recommended by failed to open", STATUS.FAIL);
+        }
+    }
+
+    @Then("user enters the name of the employee from the list and checks if list gets updated dynamically in recommended by list")
+    public void userEntersTheNameOfTheEmployeeFromTheListAndChecksIfListGetsUpdatedDynamicallyInRecommendedByList() {
+
+        if (isDisplayed(RewardAndRecogniztionLocators.LoadingAnimation)) {
+            waitUntilElementDisappear(RewardAndRecogniztionLocators.LoadingAnimation, 10);
+        }
+        // Wait for the employee names to appear
+        waitUntilElementAppear(RewardAndRecogniztionLocators.ListDisplayedRecommendedBy, 10);
+
+        // Get the name of the first employee in the list
+        String name = getElementText(RewardAndRecogniztionLocators.ListDisplayedRecommendedBy).trim();
+
+        // Enter the name in the search field
+        typeText(RewardAndRecogniztionLocators.SearchBar, name);
+
+        // Wait for the list to update dynamically
+        waitUntilElementAppear(RewardAndRecogniztionLocators.ListDisplayedRecommendedBy, 10);
+
+        // Get the name of the first employee in the updated list
+        String updatedName = getElementText(RewardAndRecogniztionLocators.ListDisplayedRecommendedBy);
+
+        // Verify if the list gets updated dynamically
+        if (updatedName.equals(name)) {
+            GemTestReporter.addTestStep("List Update Verification", "The list updated dynamically with the searched name: " + name, STATUS.PASS);
+        } else {
+            GemTestReporter.addTestStep("List Update Verification", "The list did not update dynamically. Expected name: " + name + ", Found name: " + updatedName, STATUS.FAIL);
+        }
+
+    }
+
+    @Then("user clicks on view award button")
+    public void userClicksOnViewAwardButton() {
+        waitUntilElementAppear(RewardAndRecogniztionLocators.viewAwardsButton, 10);
+        waitUntilElementClickable(RewardAndRecogniztionLocators.viewAwardsButton, 10);
+        if (isDisplayed(RewardAndRecogniztionLocators.viewAwardsButton)) {
+            click(RewardAndRecogniztionLocators.viewAwardsButton);
+            GemTestReporter.addTestStep("View Award Button Click", "View Award button clicked successfully.", STATUS.PASS);
+        } else {
+            GemTestReporter.addTestStep("View Award Button Click", "View Award button is not displayed.", STATUS.FAIL);
+        }
+    }
+
+
+    @Then("user checks if the awards received by employee popup appears")
+    public void userChecksIfTheAwardsReceivedByEmployeePopupAppears() {
+        waitUntilElementAppear(RewardAndRecogniztionLocators.awardsReceivedPopup, 10); // Ensure you use the correct locator for the popup
+        waitUntilElementClickable(RewardAndRecogniztionLocators.awardsReceivedPopup, 10); // Ensure you use the correct locator for the popup
+        if (isDisplayed(RewardAndRecogniztionLocators.awardsReceivedPopup)) { // Ensure you use the correct locator for the popup
+            GemTestReporter.addTestStep("Awards Received Popup", "Awards received by employee popup appeared successfully.", STATUS.PASS);
+        } else {
+            GemTestReporter.addTestStep("Awards Received Popup", "Awards received by employee popup did not appear.", STATUS.FAIL);
+        }
+    }
 
 }

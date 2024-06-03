@@ -46,7 +46,7 @@ Feature: Reward and recognization
     Then Award "<award name>" should not be visible in the list
     Examples:
       | praise |employee name| award name            | reward amount | description |
-      | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss |Shruti | reg1 | 500           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
+      | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss | Husain | testingauto1 | 500           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
 
 
 #  4
@@ -68,7 +68,7 @@ Feature: Reward and recognization
     Then Press Submit in award category
     Examples:
       | praise |employee name| award name            | reward amount | description |
-      | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss |Shruti| reg2 | 500           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
+      | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss |Husain| testingauto2 | 500           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
 
 
 
@@ -83,7 +83,7 @@ Feature: Reward and recognization
     Then User Change the state of award "<award name>" to inactive
     Examples:
       | award name            | reward amount | description |
-      | reg3 | 5000           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
+      | testingauto3 | 5000           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
 
 
   Scenario Outline: Create new award in inactive state and change its state to active
@@ -95,7 +95,7 @@ Feature: Reward and recognization
     Then User Change the state of award "<award name>" to active
     Examples:
       | award name            | reward amount | description |
-      | reg4 | 500           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
+      | testingauto4 | 500           | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
 
 
 
@@ -159,7 +159,7 @@ Feature: Reward and recognization
     When the user enters "<award name>", award Visibility as active, "<description>" and clicks on the submit button
     Examples:
       | award name   | description |
-      | reg5   | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
+      | testreg5   | Recognition for outstanding performance and hardwork by the employee throughout the year consistently and with discipline and dedication.very god work |
 
 
 #  14
@@ -347,7 +347,7 @@ Feature: Reward and recognization
     Then check if success animation appears
     Examples:
       |employee name|praise|
-      | Kriti    | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss|
+      | Kriti jha  | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss|
 
 
   Scenario Outline: Verify Update of recommended by me List After Adding Recommendation
@@ -363,7 +363,7 @@ Feature: Reward and recognization
     Then Verify the Name of employees "<employee name>" listed after adding the recommendation
     Examples:
       | employee name | praise |
-      | Sandeep    | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss|
+      | Sandeep Kumar  | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss|
 
   Scenario Outline: Verify functionality of previous button in add new recommendation
     When User Clicks on Award Nomination Icon
@@ -414,7 +414,7 @@ Feature: Reward and recognization
         Then user checks if the three dots button is clicked and options are visible
         Examples:
           |employee name        | praise |
-          | Sachin Garg    | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+          | Sachin kumar    | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
 
 
 
@@ -452,18 +452,18 @@ Feature: Reward and recognization
     Then user clicks on recommend button present under three dots button
     Examples:
       |employee name        | praise |
-      | Anshul   | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+      | Anshul sharma   | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
 
 
   Scenario Outline: check functionality of "Dismiss" option inside "3 dot" button
        When User Clicks on Award Nomination Icon
        Then User Access the Recommended by Me section.
-#       When User Clicks On Add New Button
-#       Then User Enters the Name Of The Employee "<employee name>"
-#       Then User Enters the Praise "<praise>" For the Employee
-#       Then User Selects Share praise with EC
-#       Then User Clicks on next button
-#       Then Select an award from the list
+       When User Clicks On Add New Button
+       Then User Enters the Name Of The Employee "<employee name>"
+       Then User Enters the Praise "<praise>" For the Employee
+       Then User Selects Share praise with EC
+       Then User Clicks on next button
+       Then Select an award from the list
        Then User Clicks on Save as Draft in Select an Award Category and verify
        Then user clicks on three dots button
        Then user clicks on Dismiss button present under three dots button
@@ -487,7 +487,7 @@ Feature: Reward and recognization
             Then Verify the Name of employees "<employee name>" listed after adding the recommendation
             Examples:
               | employee name | praise |
-              | Pankaj | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+              | Vaibhav Bansal | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
 
 
 #        check for date range and award
@@ -545,30 +545,9 @@ Feature: Reward and recognization
               Then User Clicks on Save as Draft in Select an Award Category and verify
         Examples:
               | employee name | praise |
-              |  Sakshi Ag | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+              | Sakshi Arora | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
 
 
-
-      Scenario Outline: verify if user is able to submit without selecting award
-              When User Clicks on Award Nomination Icon
-              Then User Access the Recommended by Me section.
-              When User Clicks On Add New Button
-              Then User Enters the Name Of The Employee "<employee name>"
-              Then User Enters the Praise "<praise>" For the Employee
-              Then User Selects Share praise with EC
-              Then User Clicks on next button
-              Then Press Submit in award category
-              Then Verify the Name of employees "<employee name>" listed after adding the recommendation
-        Examples:
-              | employee name | praise |
-              |  Saloni | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
-
-
-
-
-
-
-#
   Scenario Outline: Verify Functionality of "Save as Draft" Option After Adding Name, Praise, and EC-DC
     When User Clicks on Award Nomination Icon
     Then User Access the Recommended by Me section.
@@ -581,7 +560,30 @@ Feature: Reward and recognization
     Then User Clicks on Save as Draft in Select an Award Category and verify
     Examples:
       | employee name | praise |
-      |  Ayush Gupta  | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+      | Kiran kumari  | very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+
+
+
+  Scenario Outline: verify if user is able to submit without selecting award
+              When User Clicks on Award Nomination Icon
+              Then User Access the Recommended by Me section.
+              When User Clicks On Add New Button
+              Then User Enters the Name Of The Employee "<employee name>"
+              Then User Enters the Praise "<praise>" For the Employee
+              Then User Selects Share praise with EC
+              Then User Clicks on next button
+              Then Press Submit in award category
+              Then Verify the Name of employees "<employee name>" listed after adding the recommendation
+        Examples:
+              | employee name | praise |
+              | Kiran Kumari| very good job hard workingssssssssssssssssssssssssssssssssssssssssssss   |
+
+
+
+
+
+
+#
 
 
   Scenario: Verify Functionality of hr rules button on top
@@ -779,18 +781,111 @@ Feature: Reward and recognization
       | emp name   |
       | Priyanshu Prajapati |
 
-  Scenario Outline: Verify Loading of Awards List in Nominate Page
+  Scenario Outline: Verify Loading of Awards List in Nominee details Page
     When User Clicks on Award Nomination Icon
     Then user clicks on nominate button
     Then user checks if add new nomination page appears
     Then User Enters the Name Of The Employee "<emp name>"
     Then User Clicks on next button
     Then user verifies that they are directed to the nomination page.
-    Then user clicks on select award category button
-    Then user checks if the list is loading and selectable
+    Then user clicks on view award button
+    Then user checks if the awards received by employee popup appears
     Examples:
       | emp name   |
       | Priyanshu Prajapati |
+
+
+  Scenario Outline: Verify Loading of Employee Details in Nominate Page
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user verifies that they are directed to the nomination page.
+    Then user checks if employee details "<emp name>" are visible
+    Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+  Scenario Outline: Verify Navigation Buttons in Nominee Details Page
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user verifies that they are directed to the nomination page.
+    Then user checks for the presence of navigation button
+    Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+  Scenario Outline: Verify Display of "Recommended by" List
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user verifies that they are directed to the nomination page.
+    Then User Clicks on next button
+    Then user checks for the presence of recommended by list
+    Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+
+  Scenario Outline: Verify Navigation Buttons in "Recommended by" Page
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user verifies that they are directed to the nomination page.
+    Then User Clicks on next button
+    Then user checks for the presence of navigation button
+    Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+
+  Scenario Outline:Verify Search Functionality for "Recommended by" List
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user verifies that they are directed to the nomination page.
+    Then User Clicks on next button
+    Then user enters the name of the employee from the list and checks if list gets updated dynamically in recommended by list
+    Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+  Scenario Outline:Verify Display of "Select Award Category" List
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user clicks on select award category button
+    Then user checks if the list is loading and selectable
+  Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+
+  Scenario Outline:verify details of award are visible on hovering
+    When User Clicks on Award Nomination Icon
+    Then user clicks on nominate button
+    Then user checks if add new nomination page appears
+    Then User Enters the Name Of The Employee "<emp name>"
+    Then User Clicks on next button
+    Then user clicks on select award category button
+    Then user hover on award card
+  Examples:
+      | emp name   |
+      | Priyanshu Prajapati |
+
+
 
 
 

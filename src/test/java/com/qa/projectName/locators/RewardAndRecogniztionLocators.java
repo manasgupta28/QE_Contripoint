@@ -51,7 +51,7 @@ public class RewardAndRecogniztionLocators {
 
 
     //span[text()='Employee Of The Quarter']//following::mat-slide-toggle/label
-    public static By SearchBarInAwardList = By .xpath("//input[@name='searchText']");
+    public static By SearchBar = By .xpath("//input[@name='searchText']");
     public static By FirstNameInAwardList = By.xpath("(//img[@alt='award'])[1]//following::span[text()='Influence'][1]");
 
     public static String awardNameforInactivetoActive = "testaward1";
@@ -59,7 +59,7 @@ public class RewardAndRecogniztionLocators {
 
     public static By AwardInRecommendationFormTurnedToActive = By .xpath("//span[text()='"+ awardNameforInactivetoActive + "']//following::mat-slide-toggle/label");
     public static By AwardInRecommendationFormTurnedToActive(String awardNameforInactivetoActive){
-        return  By .xpath("//span[text()='"+ awardNameforInactivetoActive + "']//following::mat-slide-toggle/label");
+        return  By .xpath("//mat-card-title[text()='"+awardNameforInactivetoActive+"']");
     }
 
 
@@ -163,7 +163,9 @@ public class RewardAndRecogniztionLocators {
         public static By SelectEndDateDropDown = By.xpath("//mat-select[@formcontrolname='endingYear']");
     public static By SelectEndDate = By.xpath("//mat-option/span[contains(text(),'2024-2025')]");
     public static By QuartersForDateRange = By.xpath("(//div[@role='button'])[3]");
-    public static By QuartersForStartDateRange = By.xpath("(//div[@role='button'])[1]");
+    public static By QuartersForStartDateRange(int ind) {
+        return By.xpath("(//div[@role='button'])[" +ind+"]");
+    }
     public static By QuartersForEndDateRange = By.xpath("(//div[@role='button'])[8]");
     public static By TotalQuarters = By.xpath("//div[@role='button']");
     public static By DoneButtonInDateRange = By.xpath("//button//span[contains(text(),'DONE')]");
@@ -198,7 +200,7 @@ public class RewardAndRecogniztionLocators {
     public static By PreviousButtonInAwardSelectionInAddNewRecommendation   = By.xpath("//button[@id='cancel_btn']/span[contains(text(),'PREVIOUS')]");
     public static By SaveAsDraftButtonInAwardSelectionInAddNewRecommendation   = By.xpath("//button[@id='draft_btn']");
     public static By SaveAsDraftAnimation   = By.xpath("//div[text()=' Draft Saved! ']");
-    public static By NextButtonInAddNewRecommendation   = By.xpath("//button[@id='add_btn']/span[contains(text(),'NEXT')]");
+    public static By NextButton = By.xpath("//span[contains(text(),'NEXT')]");
 
 
     //change the name for this Scenario: Verify Update of Award List After Adding Recommendation
@@ -269,14 +271,13 @@ public class RewardAndRecogniztionLocators {
     public static By UnrecognizedTalentPage = By.xpath("//span[@class='heading' and contains(text(),'Unrecognized Talents')]");
     public static By ViewDraftListBtn = By.xpath("//button[@routerlink='/award-nomination/draft']/span");
     public static By ViewDraftListPage = By.xpath("//p[contains(@class,'main-heading') and text()='Nominations Draft List']");
-    public static By OptionsUnrecognizedTalentPage = By.xpath("//p[contains(@class,'main-heading') and text()='Nominations Draft List']");
+    public static By OptionsUnrecognizedTalentPage = By.xpath("//div[@role='tab']");
     public static By DropDownBtnNominationDraftList = By.xpath("//span[contains(@class,'mat-expansion-indicator')]");
     public static By DropDownContentNominationDraftList = By.xpath("//mat-expansion-panel/div[@style='visibility: visible;']");
 
     public static By ThreeDotsBtnNominationDraftList = By.xpath("//mat-icon[text()='more_vert']");
     public static By ThreeDotsOptionsNominationDraftList = By.xpath("//button[@role='menuitem']");
     public static By SubmitNominationThreeDotsNominationDraftList = By.xpath("//span[text()='Submit Nomination']");
-    public static By SearchBarUnrecognizedTal = By.xpath("//input[@name='searchText']");
     public static By NamesUnrecognizedTal = By.xpath("//div[@class='req-brd']//img");
     public static By EyeBtnNBNA = By.xpath("//img[@alt='view icon']");
     public static By EmployeeStatus = By.xpath("//app-never-awarded-modal");
@@ -287,7 +288,6 @@ public class RewardAndRecogniztionLocators {
     public static By RecommendedBtnNeverRecommended = By.xpath("//img[@alt='arrow']");
     public static By AddNewRecommendationForm = By.xpath("//div[@id='recommend-form']");
     public static By AddNewNominationForm = By.xpath("//div[@id='recommend-form']");
-
     public static By NominateBtn = By.xpath("//span[text()=' NOMINATE ']/parent::button");
 
 //
@@ -326,8 +326,23 @@ public class RewardAndRecogniztionLocators {
 //    public static By DropdownEmployeeAddNewNomination = By.xpath("//mat-select[@formcontrolname='empEmail']");
 
     //div[@class="award-catg-container"]
-    public static By AwardListInNomination = By.xpath("//div[@class='award-catg-container']");
+    public static By AwardList = By.xpath("//div[@class='award-catg-container']");
     public static By SelectAwardCategorySec = By.xpath("//div[text()='Select Award Category']");
+    public static By NominationDetail = By.xpath("//p[contains(@class,'name')]/strong");
+
+    public static By DismissButtonNominationPage = By.xpath("//button[@id='dismiss_btn']/span[text()=' DISMISS ']");
+
+    public static By ListNotDisplayedRecommendedBy = By.xpath("//p[text()='Not been Nominated By other Yet!']");
+    public static By ListDisplayedRecommendedBy = By.xpath("//p[@class='card-name']/strong");
+    public static By viewAwardsButton = By.xpath("//p[text()='View Awards']");
+    public static By awardsReceivedPopup = By.xpath("//app-awards-received-modal");
+
+
+
+
+
+
+
 
 
 
